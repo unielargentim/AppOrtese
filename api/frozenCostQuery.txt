@@ -1,0 +1,19 @@
+/*
+Item_Number - Coloca o numero do item ou deixa vazio para vir todos - ex.: '2075796-001'
+Organizacao - Coloca o código da Org ou deixa vazio para vir todas - ex.: C83
+*/
+SELECT mp.organization_code "Inv Organization",
+        msi.segment1         "Item Number", 
+        cst.item_cost        "Unit Cost"
+   FROM apps.cst_item_costs     cst,
+        apps.mtl_parameters     mp,
+        apps.mtl_system_items_b msi
+  WHERE mp.organization_id         = cst.organization_id
+    AND mp.organization_id         = msi.organization_id
+    AND cst.cost_type_id           = 1      
+    AND cst.inventory_item_id (+)  = msi.inventory_item_id
+    AND msi.segment1               = NVL('&Item_Number',msi.segment1)  
+    AND mp.organization_code       = NVL('&Organizacao',mp.organization_code) 
+ ORDER BY 1,2,3
+ 
+ 
