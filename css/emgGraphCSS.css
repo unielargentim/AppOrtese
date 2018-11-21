@@ -1,0 +1,70 @@
+.emgLine {
+  fill: none;
+  stroke: steelblue;
+  clip-path: url(#clip);
+}
+
+.intensityLine {
+  fill: none;
+  stroke: red;
+  clip-path: url(#clip);
+}
+
+.thresholdLine {
+  fill: none;
+  stroke: green;
+  clip-path: url(#clip);
+}
+
+
+.axisRed line{
+  stroke: red;
+}
+
+/*
+.axisRed path{
+  stroke: red;
+}
+*/
+
+.axisRed text{
+  fill: red;
+}  
+
+.axisGreen line{
+  stroke: green;
+}
+/*
+.axisGreen path{
+  stroke: green;
+}
+*/
+
+.axisGreen text{
+  fill: green;
+}  
+
+.axisBlue line{
+  stroke: steelblue;
+}
+/*
+.axisBlue path{
+  stroke: steelblue;
+}
+*/
+
+.axisBlue text{
+  fill: steelblue;
+}  
+
+.zoom {
+  cursor: move;
+  fill: none;
+  pointer-events: all;
+}
+
+.legend rect {
+  fill:white;
+  stroke:black;
+  opacity:0.8;}
+
